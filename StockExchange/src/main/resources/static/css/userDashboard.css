@@ -1,0 +1,391 @@
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3498db;
+    color: #fff;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+/* User Info */
+.user-info {
+    font-size: 18px;
+}
+
+/* Navigation */
+nav {
+    background: #f8f8f8;
+    padding: 10px;
+    position: fixed;
+    top: 60px; /* Adjust according to header height */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Main Content */
+main {
+    padding: 80px 20px 20px; /* Adjust top padding based on header and nav height */
+    width: 100%;
+    max-height: calc(100vh - 80px); /* Adjust for header and nav */
+    overflow-y: auto;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.content-section:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* Stock List */
+.stock-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* max-height: calc(100vh - 160px); Adjust based on header and nav height */
+    overflow-y: auto;
+}
+
+/* Styling for individual stock items */
+.stock-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stock-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stock-name {
+    font-weight: bold;
+}
+
+.stock-price {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.stock-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.buy-btn {
+    background-color: #28a745; /* Green */
+}
+
+.sell-btn {
+    background-color: #dc3545; /* Red */
+}
+
+.watchlist-btn {
+    background-color: #ffc107; /* Yellow */
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Holdings Section */
+.holdings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* max-height: calc(100vh - 160px); Adjust based on header and nav height */
+    overflow-y: auto;
+}
+
+.holding-item {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stock-name {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.stock-details {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.stock-details p {
+    margin: 8px 0;
+}
+
+.stock-details span {
+    font-weight: bold;
+}
+
+.total-profit {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total-profit h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.total-profit-details p {
+    margin: 10px 0;
+}
+
+.total-profit-details span {
+    font-weight: bold;
+    color: #333;
+}
+
+.total-profit p {
+    font-size: 1.1em;
+}
+
+.total-profit span {
+    color: #007bff; /* Accent color for better visibility */
+}
+
+/* styles.css */
+.content-section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.up-arrow {
+    color: red;
+    font-weight: bold;
+}
+
+.down-arrow {
+    color: green;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 1.2em;
+}
+
+.hidden {
+    display: none;
+}
+
+/* styles.css */
+
+.content-section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.arrow {
+    font-size: 1.2em;
+}
+
+.hidden {
+    display: none;
+}
+
+.profit {
+    color: green;
+    font-weight: bold;
+}
+
+.loss {
+    color: red;
+    font-weight: bold;
+}
+
+
+#portfolioTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#portfolioTable th, #portfolioTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#portfolioTable th {
+    background-color: #f2f2f2;
+}
+
+.summary {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.summary p {
+    margin: 10px 0;
+}
+
+.summary span {
+    font-weight: bold;
+}

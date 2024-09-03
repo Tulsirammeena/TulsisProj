@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home</title>
+    <link rel="stylesheet" href="css/admin1stpage.css"> <!-- Correct the path if necessary -->
+</head>
+<body>
+   
+      
+    
+    <div class="container">
+        <h1>User Home</h1>
+        <h2>		
+			<div class="user-info">
+				          <span id="admin-username" class="dropdown-toggle" th:text="${user.email}">User Email</span>
+			</div>
+		</h2>
+        <div class="button-container">
+            <a href="Stocki" class="button">Buy and Sell Stock</a>
+            <a href="UserOrder" class="button">Order List</a>
+            <a href="portfolios" class="button">Portfolio</a>
+            <a href="#" class="button">Page 4</a>
+            <!-- Add more buttons as needed -->
+            <a href="/logout" class="button">Logout</a> <!-- Logout button added here -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            padding: 20px 0;
+            margin: 0;
+            border-bottom: 2px solid #0056b3;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            text-align: center;
+            font-size: 16px;
+            color: #0056b3;
+            text-decoration: none;
+            border: 2px solid #0056b3;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        a:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Orders for User: <span th:text="${user.firstName} + ' ' + ${user.lastName}"></span></h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Stock ID</th>
+                <th>Order Type</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order : ${user.orders}">
+                <td th:text="${order.orderId}"></td>
+                <td th:text="${order.stockname}"></td>
+                <td th:text="${order.orderType}"></td>
+                <td th:text="${order.quantity}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="Stocki">Back to Users List</a>
+</body>
+</html>

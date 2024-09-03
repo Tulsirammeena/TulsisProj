@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="css/admin1stpage.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Home</h1>
+		<h2>		
+						<div class="user-info">
+							          <span id="admin-username" class="dropdown-toggle" th:text="${user.email}">User Email</span>
+						</div>
+		</h2>
+        <div class="button-container">
+            <a href="adminDashboard" class="button">Add Stock</a>
+            <a href="stocks" class="button">All Stocks</a>
+            <a href="compute" class="button">All Transactions</a>
+            <a href="Process" class="button">Compute</a>
+			<a href="portfolioupdate" class="button">Upload</a>
+            <!-- Add more buttons as needed -->
+			
+			<a href="/logout" class="button">Logout</a> <!-- Logout button added here -->
+			    
+        </div>
+    </div>
+</body>
+</html>

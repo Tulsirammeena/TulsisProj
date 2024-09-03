@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Portfolios</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css"/>
+</head>
+<body>
+    <h1>Portfolios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Portfolio ID</th>
+                <th>User</th>
+                <th>Stock</th>
+                <th>Quantity</th>
+                <th>Initial Value</th>
+                <th>Current Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="portfolio : ${portfolios}">
+                <td th:text="${portfolio.portfolioId}">ID</td>
+                <td th:text="${portfolio.user.userId}">User</td> <!-- Assuming User has a 'username' property -->
+                <td th:text="${portfolio.stock.stockId}">Stock</td> <!-- Assuming Stock has a 'name' property -->
+                <td th:text="${portfolio.quantity}">Quantity</td>
+                <td th:text="${portfolio.initialValue}">Initial Value</td>
+                <td th:text="${portfolio.currentValue}">Current Value</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

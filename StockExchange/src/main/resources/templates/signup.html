@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up and Login</title>
+    <link rel="stylesheet" href="css/styles 1.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sign Up</h1>
+        </header>
+
+        <div id="signupForm" class="form">
+            <form id="signupForm" action="/signup" method="post">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <br><br>
+                
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <br><br>
+                
+                <label for="pan">PAN:</label>
+                <input type="text" id="pan" name="pan" required>
+                <span class="error" id="panError"></span>
+                <br><br>
+                
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required>
+                <span class="error" id="phoneError"></span>
+                <br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="emailError"></span>
+                <br><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error" id="passwordError"></span>
+                <br><br>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+  
+</body>
+</html>

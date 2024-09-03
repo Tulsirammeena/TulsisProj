@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/adminDashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="logo-container">
+                <img src="/logo.png" alt="Logo" class="logo">
+                <h1>Admin Platform</h1>
+            </div>
+            <div class="user-info">
+                <span id="admin-username" class="dropdown-toggle">Admin123</span>
+                <div id="adminUserMenu" class="dropdown-menu">
+                    <a href="/admin/profile">Profile</a>
+                    <a href="/admin/logout">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#" data-section="stock-details">Stock Details</a></li>
+                <li><a href="#" data-section="reports">Reports</a></li>
+                <li><a href="#" data-section="investor-details">Investor Details</a></li>
+                <li><a href="#" data-section="transactions">Transactions</a></li>
+                <li><a href="#" data-section="order-requests">Order Requests</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+            <div id="stock-details" class="content-section">Welcome to the Stock Details section.</div>
+            <div id="reports" class="content-section" style="display: none;">Reports content will be loaded here.</div>
+            <div id="investor-details" class="content-section" style="display: none;">Investor Details content will be loaded here.</div>
+            <div id="transactions" class="content-section" style="display: none;">Transactions content will be loaded here.</div>
+            <div id="order-requests" class="content-section" style="display: none;">Order Requests content will be loaded here.</div>
+        </main>
+    </div>
+    <script src="js/adminDashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stocks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        caption {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .actions button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        .buy {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .sell {
+            background-color: #dc3545;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stocks List</h1>
+		<h2>		
+				<div class="user-info">
+				  <span id="admin-username" class="dropdown-toggle" th:text="${user.email}">User Email</span>
+				</div>
+		</h2>
+		  
+		 
+        <table>
+            <caption>Current Stock Data</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Stock ID</th>
+                    <th>Current Day Price</th>
+                    <th>Previous Day Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+			<tbody>
+			    <tr th:each="stocki : ${Stocki}">
+			        <td th:text="${stocki.stockId}"></td>
+			        <td th:text="${stocki.id}"></td>
+			        <td th:text="${stocki.currentDayPrice}"></td>
+			        <td th:text="${stocki.previousDayPrice}"></td>
+			      
+			        <td>
+			            <!-- Buy form -->
+			            <form action="/buysell" method="post" style="display:inline;">
+							<input type="hidden" name="id" th:value="${stocki.id}" />
+			                <input type="hidden" name="stockname" th:value="${stocki.stockId}" />
+			                <input type="hidden" name="userId" th:value="${user.userId}" /> <!-- Include userId -->
+			                <input type="hidden" name="orderType" value="buy" />
+			                <!-- Quantity field for the buy action -->
+			                <input type="number" name="quantity" min="1" placeholder="Quantity" required />
+			                <button type="submit" class="buy">Buy</button>
+			            </form>
+			            <!-- Sell form -->
+			            <form action="/buysell"  method="post" style="display:inline;">
+							<input type="hidden" name="id" th:value="${stocki.id}" />
+			                <input type="hidden" name="stockname" th:value="${stocki.stockId}" />
+			                <input type="hidden" name="userId" th:value="${user.userId}" /> <!-- Include userId -->
+			                <input type="hidden" name="orderType" value="sell" />
+			                <!-- Quantity field for the sell action -->
+			                <input type="number" name="quantity" min="1" placeholder="Quantity" required />
+			                <button type="submit" class="sell">Sell</button>
+			            </form>
+			        </td>
+			    </tr>
+			</tbody>
+s
+        </table>
+    </div>
+</body>
+</html>
